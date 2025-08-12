@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .parent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 650px;
+        }
+        
+        #dogIcon {
+            display: none;
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            width: 450px;
+            height: 500px;
+         }
+        
+    </style>
+</head>
+<body>
+<div class="parent">
+        <img src="images/dog-running.gif" alt="" id="dogGif">
+    <img src="images/dog-bark-icon.png" alt="" id="dogIcon">
+    <audio src="images/baby-bulldog-40103 (mp3cut.net).mp3" id="dogAudio"></audio>
+</div>
+
+<script>
+    const dogGif = document.getElementById('dogGif')
+    const dogIcon = document.getElementById('dogIcon')
+    const dogAudio = document.getElementById('dogAudio')
+    dogAudio.load()
+
+    dogGif.addEventListener('mouseenter', function(){
+        counterTime = 0
+        dogAudio.play()
+        dogIcon.style.display = "block"
+    })
+     dogGif.addEventListener('mouseleave', function(){
+        counterTime = 0
+        dogAudio.play()
+        dogIcon.style.display = "none"
+    })
+</script>
+</body>
+</html>
